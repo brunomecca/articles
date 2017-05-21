@@ -17,7 +17,9 @@
 					}
 					else{
 				?>
-						<li><a href="?page=login"><span class="glyphicon glyphicon-check"></span> Bem vindo,</a></li>
+						<li class="active"><a href="index.php"><span class="glyphicon glyphicon-check"></span> Welcome, <?php echo $_SESSION['usuario'];?></a></li>
+						<li class="active"><a href="?page=link"><span class="glyphicon glyphicon-plus"></span> Add link</a></li>
+						<li class="active"><a href="?page=sair"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 				<?php
 					}
 				?>
@@ -27,5 +29,5 @@
 	</header>
 
 	<div class="container">
-		<img src="images/logo.png">
+		<a href="index.php"><img src="images/logo.png"></a>
 	</div>

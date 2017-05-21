@@ -16,14 +16,17 @@
 
 	<div class="list-group">
 		<?php
-			foreach($consulta as $link){
+			if($consulta == False)
+				echo "<div class='alert alert-danger' role='alert'><strong>Oh snap!</strong> Your search returned 0 links</div>";
+			else
+				foreach($consulta as $link){
 		?>
-		<a href="" class="list-group item active">
-			<h4 class="list-group-item-heading"><?php echo $link['nome'];?></h4>
-			<p class="list-group-item-text">dsadsa</p>
-		</a>
+			<a href="" class="list-group item active">
+				<h4 class="list-group-item-heading"><?php echo $link['nome'];?></h4>
+				<p class="list-group-item-text">dsadsa</p>
+			</a>
 		<?php
-			}
+				}
 		?>
 	</div>
 
