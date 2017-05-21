@@ -19,7 +19,8 @@
 		public static function pesquisaUser($mensagem,$id){
 			require "connect.php";
 			//$consulta = mysqli_query($link,"SELECT * FROM links WHERE nome LIKE %'$mensagem'% OR categoria LIKE %'$mensagem'%");
-			$consulta = mysqli_query($link, "SELECT * FROM links WHERE nome LIKE '%{$mensagem}%' OR categoria LIKE '%{$mensagem}%' AND idUser == '$id'");
+			$id = intval($id);
+			$consulta = mysqli_query($link, "SELECT * FROM links WHERE nome LIKE '%{$mensagem}%' OR categoria LIKE '%{$mensagem}%' AND idUser = '$id'");
 			return $consulta;
 		}
 

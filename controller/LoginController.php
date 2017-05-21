@@ -24,7 +24,7 @@
 				}
 			} 
 		}
-		
+
 		function logout(){
 			unset($_SESSION['usuario']);
 			unset($_SESSION['id']);

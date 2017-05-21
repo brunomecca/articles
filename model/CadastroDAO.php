@@ -9,5 +9,14 @@
 			else
 				return False;
 		}
+		public static function addLink($id, $nome, $categoria, $link2){
+			require "connect.php";
+			$idInt = intval($id);
+			$consulta2 = mysqli_query($link, "INSERT INTO links(idUser, link, categoria, nome) VALUES ('$idInt','$link2','$categoria','$nome')");
+			if($consulta2 != False)
+				return True;
+			else
+				return False;
+		}
 	}
 ?>

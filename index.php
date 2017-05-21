@@ -4,6 +4,7 @@
 	require_once "controller/HomeController.php";
 	require_once "controller/CadastroController.php";
 	require_once "controller/LoginController.php";
+	require_once "controller/UserController.php";
 	require_once "model/PesquisaDAO.php";
 	require_once "model/CadastroDAO.php";
 
@@ -15,6 +16,9 @@
 	}
 	else if(isset($_GET['page']) && $_GET['page'] == 'login' || $_GET['page'] == 'sair'){
 		$controller = new LoginController();
+	}
+	else if(isset($_GET['page']) == 'link'){
+		$controller = new UserController();
 	}
 	if(isset($_GET['pesquisa'])){
 		$controller = new HomeController();
