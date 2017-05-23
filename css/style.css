@@ -7,3 +7,12 @@
 body{
 	background-color: #D8CEF6;
 }
+
+.post-link{
+	width:500px;
+}
+
+.post-link img{
+	width:100px;
+	height:150px;
+}

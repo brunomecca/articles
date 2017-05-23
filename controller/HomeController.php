@@ -14,6 +14,8 @@
 				require "view/midPesquisa.php";
 			}
 			else{
+				if(isset($_SESSION['id']))
+					$consulta = PesquisaDAO::pesquisaPostUser($_SESSION['id']);
 				require "view/mid.php";
 			}
 			require "view/bottom.php";

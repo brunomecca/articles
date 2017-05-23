@@ -9,7 +9,7 @@
 
 		public static function login($user,$pass){
 			require "connect.php";
-			$consulta = mysqli_query($link, "SELECT usuario, id FROM users WHERE usuario = '$user' AND senha = '$pass'");
+			$consulta = mysqli_query($link, "SELECT usuario, id FROM users WHERE usuario = '$user' AND senha = '$pass' ORDER BY id DESC");
 			if($consulta != False)
 				return $consulta;
 			else
@@ -20,9 +20,17 @@
 			require "connect.php";
 			//$consulta = mysqli_query($link,"SELECT * FROM links WHERE nome LIKE %'$mensagem'% OR categoria LIKE %'$mensagem'%");
 			$id = intval($id);
-			$consulta = mysqli_query($link, "SELECT * FROM links WHERE nome LIKE '%{$mensagem}%' OR categoria LIKE '%{$mensagem}%' AND idUser = '$id'");
+			$consulta = mysqli_query($link, "SELECT * FROM links WHERE nome LIKE '%{$mensagem}%' OR categoria LIKE '%{$mensagem}%' AND idUser = '$id' ORDER BY id DESC");
 			return $consulta;
 		}
 
+		public static function pesquisaPostUser($user){
+			require "connect.php";
+			$consulta = mysqli_query($link, "SELECT * FROM links WHERE idUser = '$user' ORDER BY id DESC");
+			if($consulta != False)
+				return $consulta;
+			else
+				return False;
+		}
 	}
 ?>

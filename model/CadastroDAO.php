@@ -9,10 +9,10 @@
 			else
 				return False;
 		}
-		public static function addLink($id, $nome, $categoria, $link2){
+		public static function addLink($id, $nome, $categoria, $link2, $data){
 			require "connect.php";
 			$idInt = intval($id);
-			$consulta2 = mysqli_query($link, "INSERT INTO links(idUser, link, categoria, nome) VALUES ('$idInt','$link2','$categoria','$nome')");
+			$consulta2 = mysqli_query($link, "INSERT INTO links(idUser, link, categoria, nome, data) VALUES ('$idInt','$link2','$categoria','$nome', '$data')");
 			if($consulta2 != False)
 				return True;
 			else
