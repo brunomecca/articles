@@ -23,12 +23,16 @@
 			foreach($consulta as $link){
 ?>
 				<div class="post-link">
+					
 					<a href="<?php echo $link['link'];?>" class="list-group-item">
+
 						<h4 class="list-group-item-heading"><?php echo $link['nome'];?></h4>
 						<h6 class="list-group-item-heading"><?php echo $link['data'];?></h6>
 						<p class="list-group-item-text"><?php echo $link['categoria'];?></p>
 
 					</a>
+					<a href="?done=<?php echo $link['id'];?>"><button type="button" class="button">DONE!</button></a>
+					<br><br>
 				</div>
 				
 <?php

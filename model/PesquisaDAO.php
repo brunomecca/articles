@@ -16,11 +16,10 @@
 				return False;
 		}
 
-		public static function pesquisaUser($mensagem,$id){
+		public static function pesquisaUser($mensagem,$id2){
 			require "connect.php";
 			//$consulta = mysqli_query($link,"SELECT * FROM links WHERE nome LIKE %'$mensagem'% OR categoria LIKE %'$mensagem'%");
-			$id = intval($id);
-			$consulta = mysqli_query($link, "SELECT * FROM links WHERE nome LIKE '%{$mensagem}%' OR categoria LIKE '%{$mensagem}%' AND idUser = '$id' ORDER BY id DESC");
+			$consulta = mysqli_query($link, "SELECT * FROM links WHERE idUser = '$id2' AND (nome LIKE '%{$mensagem}%' OR categoria LIKE '%{$mensagem}%') ORDER BY id DESC");
 			return $consulta;
 		}
 
@@ -31,6 +30,18 @@
 				return $consulta;
 			else
 				return False;
+		}
+
+		public static function remove($id){
+			require "connect.php";
+			$consulta = mysqli_query($link,"DELETE FROM links WHERE id = '$id'");
+		}
+
+		public static function returnIdUser($id){
+			require "connect.php";
+			$consulta = mysqli_query($link,"SELECT idUser FROM links WHERE id = '$id'");
+			$a = mysqli_fetch_array($consulta);
+			return $a['idUser'];
 		}
 	}
 ?>

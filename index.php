@@ -20,6 +20,9 @@
 	else if(isset($_GET['page']) == 'link'){
 		$controller = new UserController();
 	}
+	if(isset($_GET['done'])){
+		$controller = new HomeController();
+	}
 	if(isset($_GET['pesquisa'])){
 		$controller = new HomeController();
 	}

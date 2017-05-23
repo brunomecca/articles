@@ -3,7 +3,6 @@
 		public function init(){
 			if(!isset($_SESSION['usuario']))
 				header("Location:index.php");
-			
 			$this->addLink();
 		}
 
@@ -26,5 +25,6 @@
 					echo "<script>alert('Error!');</script>";
 			}
 		}
+
 	}
 ?>
